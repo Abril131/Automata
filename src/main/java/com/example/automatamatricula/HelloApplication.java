@@ -31,18 +31,16 @@ public class HelloApplication extends Application {
         vbox.setPadding(new Insets(20, 20, 20, 20));
         vbox.getChildren().addAll(entradaTextField, mostrarButton, salidaLabel);
 
-        Scene scene = new Scene(vbox, 300, 200);
+        Scene scene = new Scene(vbox, 500, 300);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     private void mostrarTexto() {
         String textoIngresado = entradaTextField.getText();
-        salidaLabel.setText("Matricula ingresada: " + textoIngresado);
         Automata validar = new Automata();
         String resultado = validar.automata(textoIngresado);
-        salidaLabel.setText("Resultado: "+ resultado);
-        salidaLabel.setText(" " + resultado);
+        salidaLabel.setText("MatrÍcula Ingresada:" + " "+textoIngresado + " \n" + " " + resultado);
     }
 
     public static void main(String[] args) {
