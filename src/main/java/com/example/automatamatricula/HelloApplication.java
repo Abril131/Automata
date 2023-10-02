@@ -38,9 +38,14 @@ public class HelloApplication extends Application {
 
     private void mostrarTexto() {
         String textoIngresado = entradaTextField.getText();
-        Automata validar = new Automata();
-        String resultado = validar.automata(textoIngresado);
-        salidaLabel.setText("MatrÍcula Ingresada:" + " "+textoIngresado + " \n" + " " + resultado);
+        if (textoIngresado.length() == 9) {
+            Automata validar = new Automata();
+            String resultado = validar.automata(textoIngresado);
+            salidaLabel.setText("MatrÍcula Ingresada:" + " " + textoIngresado + " \n" + " " + resultado);
+        } else {
+            salidaLabel.setText("La matrícula debe contener 9 caracteres.");
+        }
+
     }
 
     public static void main(String[] args) {
